@@ -15,19 +15,13 @@ from tensorflow.keras.models import load_model
 #load saved 
 scaler = StandardScaler()
 
-urine_df = pd.read_csv('C:/Users/kabbe/Desktop/Hibuna/final/6k_Urine Sample.csv')
+urine_df = pd.read_csv('6k_Urine Sample.csv')
 x = urine_df.drop(columns='target', axis=1)
 y = urine_df['target']
 scaler.fit(x)
 standardized_data = scaler.transform(x)
-
-#"C:\Users\kabbe\Desktop\KidneyStoneWeb\KS_modelRF.sav"
-#diabetes_model = load_model('C:/Users/kabbe/Desktop/DiabStreamlit/Diab_cnnlstm66.keras')
-#"C:\Users\kabbe\Desktop\KidneyStoneWeb\KStone_cnncbamLSTM9950.keras"  
-KSrf_model = pickle.load(open('C:/Users/kabbe/Desktop/KidneyStoneWeb/KS_modelRF.sav','rb'))
-#KSrf_model = load_model('C:/Users/kabbe/Desktop/KidneyStoneWeb/KStone_cnncbamLSTM9950.keras')
-
-
+  
+KSrf_model = pickle.load(open('KS_modelRF.sav','rb'))
 
 #sidebar
 
