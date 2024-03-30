@@ -11,6 +11,7 @@ import pandas as pd
 import streamlit as st
 from streamlit_option_menu import option_menu
 from sklearn.preprocessing import StandardScaler
+from tensorflow.keras.models import load_model
 
 #load saved 
 scaler = StandardScaler()
@@ -21,8 +22,8 @@ y = urine_df['target']
 scaler.fit(x)
 standardized_data = scaler.transform(x)
   
-KSrf_model = pickle.load(open('KS_modelRF.sav','rb'))
-
+#KSrf_model = pickle.load(open('KS_modelRF.sav','rb'))
+KSrf_model = load_model('KStone_LSTM_98925.keras')
 #sidebar
 
 with st.sidebar:
