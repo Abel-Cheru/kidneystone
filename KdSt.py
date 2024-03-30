@@ -23,7 +23,7 @@ scaler.fit(x)
 standardized_data = scaler.transform(x)
   
 #KSrf_model = pickle.load(open('KS_modelRF.sav','rb'))
-KSrf_model = load_model('KStone_LSTM_98925.keras','rb')
+KSrf_model = load_model('KStone_LSTM_98925.keras','wb')
 #sidebar
 
 with st.sidebar:
